@@ -14,6 +14,14 @@ module "iac_teams_members" {
   team_member_list = var.teams_map[each.value.team_name].team_member_list
 }
 
+#can only use one of members or memberships
+module "iac_teams_memberships" {
+  source           = "./modules/teams/memberships"
+  for_each         = module.iac_teams
+  team_id          = each.value.team_id
+  team_member_list = var.teams_map[each.value.team_name].team_member_list
+}
+
 module "iac_teams_repositories" {
   source         = "./modules/teams/repositories"
   for_each       = module.iac_teams
