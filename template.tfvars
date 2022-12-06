@@ -42,6 +42,9 @@ org_secret_scanning_push_protection_enabled_for_new_repositories = true # enterp
 #-----------------------------------------
 org_allowed_actions              = "selected"
 org_actions_enabled_repositories = "all"
+org_actions_github_owned_allowed = true
+org_actions_verified_allowed     = true
+org_actions_allowed_patterns     = ["boxboat/terraform-azure-actions@*"]
 
 # Settings > Actions > Runner groups
 #-----------------------------------------
