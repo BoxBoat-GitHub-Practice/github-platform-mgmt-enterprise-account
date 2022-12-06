@@ -1,11 +1,10 @@
 # manages team members
-dynamic "github_team_membership" {
-  team_id  = var.team_id
-  for_each = var.team_member_list
-  content {
-    username = github_team_membership.value.team_member_username
-    role     = github_team_membership.value.team_member_role
+resource "github_team_membership" "iac_team_membership" {
+  team_id = var.team_id
+  for_each = { for membership in var.team_member_list :
+    membership.team_member_username => membership.team_member_role
   }
-  # username = each.value.team_member_username
-  # role     = each.value.team_member_role
+  username = each.key
+  role     = each.value
 }
+
