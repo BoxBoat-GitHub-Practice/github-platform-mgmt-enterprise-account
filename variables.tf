@@ -32,6 +32,9 @@ variable "org_secret_scanning_push_protection_enabled_for_new_repositories" {}
 #---------------------------------------------------------------------------------------------
 variable "org_allowed_actions" {}
 variable "org_actions_enabled_repositories" {}
+variable "org_actions_github_owned_allowed " {}
+variable "org_actions_verified_allowed " {}
+variable "org_actions_allowed_patterns " {}
 
 #---------------------------------------------------------------------------------------------
 # People > Members | (ie Organization Members)
