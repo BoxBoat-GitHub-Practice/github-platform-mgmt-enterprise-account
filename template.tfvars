@@ -74,51 +74,51 @@ org_member_map = {
 # Teams > "team-name" > Repositories
 # Teams > "team-name" > Members
 #-----------------------------------------
-# teams_map = {
-#   dev-team = {
-#     # General
-#     team_name      = "dev-team",
-#     team_desc      = "team of developers",
-#     team_privacy   = "closed",
-#     parent_team_id = null,
-#     # Repositories
-#     team_repo_list = [{
-#       repo_name       = "testing-repo"
-#       repo_permission = "pull"
-#     }]
-#     # Members
-#     team_member_list = [{
-#       team_member_username = "jay-rodriguez-bb"
-#       team_member_role     = "maintainer"
-#       },
-#       {
-#         team_member_username = "DntworryJayshere"
-#         team_member_role     = "member"
-#     }]
-#   },
-#   release-engineers = {
-#     team_name      = "release-engineers",
-#     team_desc      = "team required for sod and aiding in the release process",
-#     team_privacy   = "closed",
-#     parent_team_id = null,
-#     team_repo_list = [{
-#       repo_name       = "testing-repo"
-#       repo_permission = "triage"
-#       },
-#       {
-#         repo_name       = "additional-repo"
-#         repo_permission = "push"
-#     }]
-#     team_member_list = [{
-#       team_member_username = "jay-rodriguez-bb"
-#       team_member_role     = "maintainer"
-#       },
-#       {
-#         team_member_username = "tboker"
-#         team_member_role     = "member"
-#     }]
-#   }
-# }
+teams_map = {
+  dev-team = {
+    # General
+    team_name      = "dev-team",
+    team_desc      = "team of developers",
+    team_privacy   = "closed",
+    parent_team_id = null,
+    # Repositories
+    team_repo_list = [{
+      repo_name       = "testing-repo"
+      repo_permission = "pull"
+    }]
+    # Members
+    team_member_list = [{
+      team_member_username = "jay-rodriguez-bb"
+      team_member_role     = "maintainer"
+      },
+      {
+        team_member_username = "DntworryJayshere"
+        team_member_role     = "member"
+    }]
+  },
+  release-engineers = {
+    team_name      = "release-engineers",
+    team_desc      = "team required for sod and aiding in the release process",
+    team_privacy   = "closed",
+    parent_team_id = null,
+    team_repo_list = [{
+      repo_name       = "testing-repo"
+      repo_permission = "triage"
+      },
+      {
+        repo_name       = "additional-repo"
+        repo_permission = "push"
+    }]
+    team_member_list = [{
+      team_member_username = "jay-rodriguez-bb"
+      team_member_role     = "maintainer"
+      },
+      {
+        team_member_username = "tboker"
+        team_member_role     = "member"
+    }]
+  }
+}
 
 #---------------------------------------------------------------------------------------------
 # Repositories | (ie. Repositories)

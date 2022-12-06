@@ -28,8 +28,8 @@ module "org_settings" {
 }
 
 # manages organization actions settings
-# module "org_actions_settings" {
-#   source = "./modules/settings/actions"
-#   org_allowed_actions = var.org_allowed_actions
-#   org_actions_enabled_repositories = var.org_actions_enabled_repositories
-# }
+module "org_actions_settings" {
+  source                           = "./modules/settings/actions"
+  org_allowed_actions              = var.org_allowed_actions
+  org_actions_enabled_repositories = var.org_actions_enabled_repositories
+}

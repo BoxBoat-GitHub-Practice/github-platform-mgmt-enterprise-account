@@ -19,30 +19,30 @@ module "iac_repo" {
 }
 
 # # creates and manages repo issues
-# module "iac_repo_issue" {
-#   source   = "./modules/repositories/issues"
-#   for_each = module.iac_repo
-#   # count                         = each.value.repo_has_issues ? 1 : 0
-#   repository_name = each.value.repository_name
-#   repo_issue_list = var.repo_map[each.value.repository_name].repo_issue_list
-# }
+module "iac_repo_issue" {
+  source   = "./modules/repositories/issues"
+  for_each = module.iac_repo
+  # count                         = each.value.repo_has_issues ? 1 : 0
+  repository_name = each.value.repository_name
+  repo_issue_list = var.repo_map[each.value.repository_name].repo_issue_list
+}
 
 # # creates and manages repo milestones
-# module "iac_repo_milestones" {
-#   source              = "./modules/repositories/milestones"
-#   for_each            = module.iac_repo
-#   repository_name     = each.value.repository_name
-#   repository_owner    = split("/", "${each.value.repository_full_name}")[0]
-#   repo_milestone_list = var.repo_map[each.value.repository_name].repo_milestone_list
-# }
+module "iac_repo_milestones" {
+  source              = "./modules/repositories/milestones"
+  for_each            = module.iac_repo
+  repository_name     = each.value.repository_name
+  repository_owner    = split("/", "${each.value.repository_full_name}")[0]
+  repo_milestone_list = var.repo_map[each.value.repository_name].repo_milestone_list
+}
 
 # # creates and manages repo files
-# module "iac_repo_files" {
-#   source          = "./modules/repositories/files"
-#   for_each        = module.iac_repo
-#   repository_name = each.value.repository_name
-#   repo_file_list  = var.repo_map[each.value.repository_name].repo_file_list
-# }
+module "iac_repo_files" {
+  source          = "./modules/repositories/files"
+  for_each        = module.iac_repo
+  repository_name = each.value.repository_name
+  repo_file_list  = var.repo_map[each.value.repository_name].repo_file_list
+}
 
 # # creates and manages repo environments
 # module "iac_repo_environments" {
