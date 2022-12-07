@@ -1,6 +1,6 @@
 Build status badges
 
-# GitHub Platform Mgmt for an Enterprise Account
+# GitHub Platform Mgmt for an Enterprize Account
 The github-platform-mgmt-organization-account repository exists to provide infrastructure as code for a given organization's GitHub vendor application installation. The primary technology leveraged within this repository is the [GitHub Provider for Terraform](https://registry.terraform.io/providers/integrations/github/5.7.0), which allows users to manage their GitHub organization's setting, members, teams, repos, and projects in a scalable/reliable/automated/distributed manner. This repository is one of three relevant repositories in regards to github platform management through IAC due to "[github account type](https://docs.github.com/en/get-started/learning-about-github/types-of-github-accounts)" context constraints within the GitHub Provider for Terraform. Please refer to the following repositories depending on your needs.
 - [Personal accounts](https://github.com/BoxBoat-GitHub-Practice/github-platform-mgmt-personal-account)
 - [Organization accounts](https://github.com/BoxBoat-GitHub-Practice/github-platform-mgmt-organization-account)
