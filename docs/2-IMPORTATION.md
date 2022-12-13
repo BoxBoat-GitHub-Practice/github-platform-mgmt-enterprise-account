@@ -9,7 +9,7 @@
 ## pre-requisites
 
 1. locally [install terraform](https://releases.hashicorp.com/terraform/) version 0.13.0 as this is the required version for terraformer use.
-  - I use [tfenv](https://github.com/tfutils/tfenv) to manage terraform version installaitons on my mac. Tfenv can be installed by running the following [brew](https://formulae.brew.sh/formula/tfenv) command `brew install tfenv`
+  - I use [tfenv](https://github.com/tfutils/tfenv) to manage terraform version installations on my mac. Tfenv can be installed by running the following [brew](https://formulae.brew.sh/formula/tfenv) command `brew install tfenv`
     - `tfenv install 0.13.0`
     - `tfenv install 1.3.4`
     - `tfenv use 0.13.0`
@@ -29,7 +29,7 @@
   - Storage Account: terraform10
   - Container: state-files
   - Subscription ID: d09f4363-eae7-4c79-864e-08154540c083
-  - organziation secrets can be leveraged for github actions use: CLIENT_ID, CLIENT_SECRET, TENANT_ID, SUBSCRIPTION_ID
+  - organization secrets can be leveraged for github actions use: CLIENT_ID, CLIENT_SECRET, TENANT_ID, SUBSCRIPTION_ID
 7. Import resources not included through terraformer.
   - run the below command to obtain the Organization ID.
 ``` 
@@ -41,7 +41,7 @@ curl \
   - copy the settings.tf & settings.auto.tfvars files to the root of your terraform configuration.
   - run `terraform init`
   - run `terraform import module.org_settings.github_organization_settings.iac_organization <Organization_ID>`
-  - input values into the settings.auto.tfvars as neccessary. 
+  - input values into the settings.auto.tfvars as necessary. 
 8. Validate succuessful terraformer and standard terraform import.
   - run `terraform init`
   - run `terraform plan`
