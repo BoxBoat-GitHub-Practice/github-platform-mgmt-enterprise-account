@@ -50,3 +50,5 @@ curl \
 ## outputs
 
 ## additional references/links
+run terraform state rm for those resources you don't want to control
+remove those resources from the .tf file

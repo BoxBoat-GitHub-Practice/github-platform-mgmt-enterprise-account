@@ -8,7 +8,7 @@
 ## pre-requisites
 
 ## inputs/steps
-
+adjust tfvars files and create pull requests
 ## outputs
 
 ## additional references/links

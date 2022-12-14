@@ -8,7 +8,7 @@
 ## pre-requisites
 
 ## inputs/steps
-
+use moved blocks following template patterns
 ## outputs
 
 ## additional references/links
