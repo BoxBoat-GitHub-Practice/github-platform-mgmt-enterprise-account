@@ -35,12 +35,24 @@ resource "github_repository" "iac_repo" {
       }
     }
   }
-
-  # pages {
-  #   source {
-  #     branch = "main"
-  #     path   = "/docs"
-  #   }
-  # }
 }
 
+resource "github_branch_default" "this" {
+  repository = github_repository.iac_repo.name
+  branch = "main"
+}
+
+resource "github_branch_protection" "this" {
+  pattern = github_branch_default.this.branch
+  enforce_admins = true
+  allows_deletions = false
+  require_conversation_resolution = true
+  required_pull_request_reviews {
+    dismiss_stale_reviews = true
+    require_code_owner_reviews = true
+    required_approving_review_count = 1
+    require_last_push_approval = true
+  }
+  allow_force_pushes = false
+  lock_branch = true
+}
