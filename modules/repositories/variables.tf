@@ -20,3 +20,8 @@ variable "repo_ignore_vulnerability_alerts_during_read" {}
 variable "repo_advanced_security_status" {}
 variable "repo_secret_scanning_status" {}
 variable "repo_secret_scanning_push_protection_status" {}
+variable "is_enterprise_account" {
+    type = bool
+    default = false
+    description = "Whether the github organization is under an enterprise account."
+}
