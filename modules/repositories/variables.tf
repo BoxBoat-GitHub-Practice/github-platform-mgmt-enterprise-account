@@ -6,6 +6,7 @@ variable "repo_has_wiki" {}
 variable "repo_has_projects" {}
 variable "repo_visibility" {}
 variable "repo_allow_auto_merge" {}
+variable "repo_allow_update_branch" {}
 variable "repo_allow_merge_commit" {}
 variable "repo_allow_squash_merge" {}
 variable "repo_allow_rebase_merge" {}
