@@ -43,6 +43,7 @@ resource "github_branch_default" "this" {
 }
 
 resource "github_branch_protection" "this" {
+  repository_id = github_repository.iac_repo.name
   pattern = github_branch_default.this.branch
   enforce_admins = true
   allows_deletions = false
@@ -53,6 +54,6 @@ resource "github_branch_protection" "this" {
     required_approving_review_count = 1
     require_last_push_approval = true
   }
-  allow_force_pushes = false
+  allows_force_pushes = false
   lock_branch = true
 }
