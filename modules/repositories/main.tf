@@ -21,15 +21,18 @@ resource "github_repository" "iac_repo" {
   topics                                  = var.repo_topics
   vulnerability_alerts                    = var.repo_vulnerability_alerts
   ignore_vulnerability_alerts_during_read = var.repo_ignore_vulnerability_alerts_during_read
-  security_and_analysis {
-    advanced_security {
-      status = var.repo_advanced_security_status
-    }
-    secret_scanning {
-      status = var.repo_secret_scanning_status
-    }
-    secret_scanning_push_protection {
-      status = var.repo_secret_scanning_push_protection_status
+  dynamic "security_and_analysis" {
+    for_each = var.is_enterprise_account ? ["security_analysis"] : []  
+    content {
+      advanced_security {
+        status = var.repo_advanced_security_status
+      }
+      secret_scanning {
+        status = var.repo_secret_scanning_status
+      }
+      secret_scanning_push_protection {
+        status = var.repo_secret_scanning_push_protection_status
+      }
     }
   }
 
