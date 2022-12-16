@@ -17,11 +17,23 @@ variable "repo_license_template" {}
 variable "repo_topics" {}
 variable "repo_vulnerability_alerts" {}
 variable "repo_ignore_vulnerability_alerts_during_read" {}
-variable "repo_advanced_security_status" {}
-variable "repo_secret_scanning_status" {}
-variable "repo_secret_scanning_push_protection_status" {}
+variable "repo_advanced_security_status" {
+  type        = string
+  default     = "disabled"
+  description = "Set to enabled to enable advanced security features on the repository."
+}
+variable "repo_secret_scanning_status" {
+  type        = string
+  default     = "disabled"
+  description = "Set to enabled to enable secret scanning on the repository."
+}
+variable "repo_secret_scanning_push_protection_status" {
+  type        = string
+  default     = "disabled"
+  description = "Set to enabled to enable secret scanning push protection on the repository."
+}
 variable "is_enterprise_account" {
-    type = bool
-    default = false
-    description = "Whether the github organization is under an enterprise account."
+  type        = bool
+  default     = false
+  description = "Whether the github organization is under an enterprise account."
 }
