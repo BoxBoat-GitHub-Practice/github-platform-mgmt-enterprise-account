@@ -22,7 +22,7 @@ resource "github_repository" "iac_repo" {
   vulnerability_alerts                    = var.repo_vulnerability_alerts
   ignore_vulnerability_alerts_during_read = var.repo_ignore_vulnerability_alerts_during_read
   dynamic "security_and_analysis" {
-    for_each = var.is_enterprise_account ? ["security_analysis"] : []  
+    for_each = var.is_enterprise_account ? ["security_analysis"] : []
     content {
       advanced_security {
         status = var.repo_advanced_security_status
@@ -35,25 +35,4 @@ resource "github_repository" "iac_repo" {
       }
     }
   }
-}
-
-resource "github_branch_default" "this" {
-  repository = github_repository.iac_repo.name
-  branch = "main"
-}
-
-resource "github_branch_protection" "this" {
-  repository_id = github_repository.iac_repo.name
-  pattern = github_branch_default.this.branch
-  enforce_admins = true
-  allows_deletions = false
-  require_conversation_resolution = true
-  required_pull_request_reviews {
-    dismiss_stale_reviews = true
-    require_code_owner_reviews = true
-    required_approving_review_count = 1
-    require_last_push_approval = true
-  }
-  allows_force_pushes = false
-  lock_branch = true
 }
